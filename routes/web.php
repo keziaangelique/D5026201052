@@ -31,3 +31,17 @@ Route::get('ets2021',"ViewController@showETS");
 //file yang menggunakan method post
 Route::get('glbb',"ViewController@showGLBB");
 Route::post('hasil',"ViewController@liatHasil") ;
+
+//route CRUD
+Route::get('/pegawai','PegawaiController@index');
+
+//input DB
+Route::get('/pegawai/tambah','PegawaiController@tambah');
+Route::post('/pegawai/store','PegawaiController@store');
+
+//update DB
+Route::get('/pegawai/edit/{id}','PegawaiController@edit');
+Route::post('/pegawai/update','PegawaiController@update');
+
+//delete DB
+Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
