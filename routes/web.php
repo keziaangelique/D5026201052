@@ -45,3 +45,14 @@ Route::post('/pegawai/update','PegawaiController@update');
 
 //delete DB
 Route::get('/pegawai/hapus/{id}','PegawaiController@hapus');
+
+//route CRUD Mutasi
+Route::get('/mutasi','MutasiController@indexmutasi');
+
+Route::get('/mutasi/add','MutasiController@add');
+Route::post('/mutasi/save','MutasiController@save');
+
+Route::get('/mutasi/ubah/{id}','MutasiController@ubah');
+Route::post('/mutasi/unggah','MutasiController@unggah');
+
+Route::get('/mutasi/clear/{id}','MutasiController@clear');
