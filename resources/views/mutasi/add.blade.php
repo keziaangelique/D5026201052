@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout.happy')
+@section('title', 'Tambah Data Mutasi')
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<title>CRUD Mutasi</title>
-</head>
-<body>
+@section('konten')
+
 <div class="container">
 	<h3>Tambah Data Mutasi</h3>
 
-	<a class="btn btn-dark" href="/mutasi"> Kembali</a>
+	<a class="btn btn-md btn-dark mb-3" href="/mutasi"> Kembali</a>
 
-	<br/>
 	<br/>
 
 	<form action="/mutasi/save" method="post">
 		{{ csrf_field() }}
-		ID <input type="number" name="id" required="required"> <br/><br/>
-		ID Pegawai <input type="number" name="idpegawai" required="required"> <br/><br/>
-		Departemen <input type="text" name="departemen" required="required"> <br/><br/>
-        Sub Departemen <input type="text" name="subdepartemen" required="required"> <br/><br/>
-        Mulai Bertugas <input type="datetime-local" name="mulaibertugas" required="required"> <br/>
-		<br/>
+        <div class="form-group">
+            <label for="id">ID :</label>
+            <input type="number" class="form-control" placeholder="Masukkan ID" name="id" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="idpegawai">ID Pegawai :</label>
+            <input type="number" class="form-control" placeholder="Masukkan ID Pegawai" name="idpegawai" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="departemen">Departemen :</label>
+            <input type="text" class="form-control" placeholder="Masukkan Departemen" name="departemen" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="subdepartemen">Sub Departemen :</label>
+            <input type="text" class="form-control" placeholder="Masukkan Sub Departemen" name="subdepartemen" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="mulaibertugas">Mulai Bertugas :</label>
+            <input type="datetime-local" class="form-control" name="mulaibertugas" required="required">
+        </div><br/>
 		<input class="btn btn-success" type="submit" value="Simpan Data">
 	</form>
 </div>
 </body>
-</html>
+
+@endsection

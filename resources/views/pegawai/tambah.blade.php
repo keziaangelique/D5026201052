@@ -1,26 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+@extends('layout.happy')
+@section('title', 'Tambah Data Pegawai')
 
-	<h2><a href="https://www.malasngoding.com">www.malasngoding.com</a></h2>
-	<h3>Data Pegawai</h3>
+@section('konten')
 
-	<a href="/pegawai"> Kembali</a>
+	<h3>Tambah Data Pegawai</h3>
 
-	<br/>
+	<a class="btn btn-md btn-dark mb-3" href="/pegawai"> Kembali</a>
+
 	<br/>
 
 	<form action="/pegawai/store" method="post">
-		{{ csrf_field() }}
-		Nama <input type="text" name="nama" required="required"> <br/>
-		Jabatan <input type="text" name="jabatan" required="required"> <br/>
-		Umur <input type="number" name="umur" required="required"> <br/>
-		Alamat <textarea name="alamat" required="required"></textarea> <br/>
-		<input type="submit" value="Simpan Data">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <label for="nama">Nama :</label>
+            <input type="text" class="form-control" placeholder="Masukkan nama pegawai" name="nama" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="jabatan">Jabatan :</label>
+            <input type="text" class="form-control" placeholder="Masukkan jabatan pegawai" name="jabatan" required="required">
+        </div><br/>
+		<div class="form-group">
+            <label for="umur">Umur :</label>
+            <input type="number" class="form-control" placeholder="Masukkan umur pegawai" name="umur" required="required">
+        </div><br/>
+        <div class="form-group">
+            <label for="alamat">Alamat :</label>
+            <textarea type="text" class="form-control" placeholder="Masukkan alamat pegawai" name="alamat" required="required"> </textarea>
+        </div><br/>
+		<input class="btn btn-success" type="submit" value="Simpan Data">
 	</form>
 
-</body>
-</html>
+@endsection
