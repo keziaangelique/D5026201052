@@ -12,10 +12,10 @@
 
 	<form action="/mutasi/save" method="post">
 		{{ csrf_field() }}
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="id">ID :</label>
             <input type="number" class="form-control" placeholder="Masukkan ID" name="id" required="required">
-        </div><br/>
+        </div><br/> --}}
         <div class="form-group">
             <label for="idpegawai">ID Pegawai :</label>
             <input type="number" class="form-control" placeholder="Masukkan ID Pegawai" name="idpegawai" required="required">

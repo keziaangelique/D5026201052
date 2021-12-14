@@ -16,7 +16,7 @@
 		<input type="hidden" name="id" value="{{ $a->ID }}">
 
         <div class="form-group">
-            <label for="nama">Nama :</label>
+            <label for="nama">Nama Pegawai :</label>
             <div class='col-sm-4 input-group date' id='nama'>
                 <select class="form-control" name="idpegawai">
                     @foreach($pegawai as $p )

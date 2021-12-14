@@ -169,7 +169,9 @@
             width: 2px;
             height: 32px;
             background-color: var(--white-color);
+
         }
+
 
         /* ===== MEDIA QUERIES=====*/
         @media screen and (min-width: 768px) {
@@ -244,13 +246,9 @@
                     <span class="nav__name">Mutasi</span>
                 </a>
 
-                <a href="/#" class="nav__link">
-                    <i class='bx bx-loader nav__icon'></i>
-                    <span class="nav__name">Minggu Depan</span>
-                </a>
 
-                <a href="/#" class="nav__link">
-                    <i class='bx bx-loader nav__icon'></i>
+                <a href="/hewan" class="nav__link">
+                    <i class='bx bxs-cat'></i>
                     <span class="nav__name">Praktikum</span>
                 </a>
 
@@ -270,7 +268,10 @@
             @show
         </div>
     </section>
-
+    <br/>
+    <br/>
+    {{-- <footer style="bottom:0; position: fixed; left: 0; text-align: center; width: 100%; margin-bottom:10px;">
+        <p style="color: #F67E7D">© 2021 Kezia Angelique Sidabutar</p> --}}
     <script>
         var menu_btn = document.querySelector("#menu-btn")
         var sidebar = document.querySelector("#sidebar")

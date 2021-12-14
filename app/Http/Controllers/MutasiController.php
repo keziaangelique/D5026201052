@@ -14,10 +14,17 @@ class MutasiController extends Controller
         //DB::table('')->get()
 
         // mengambil data dari table mutasi
-    $mutasi = DB::table('mutasi')->get();
+    // $mutasi = DB::table('mutasi')->get();
 
-    	// mengirim data pegawai mutasi ke view indexmutasi
-    	return view('mutasi.indexmutasi',['mutasi' => $mutasi]); //passing value bisa lebih dari 1
+    // 	// mengirim data pegawai mutasi ke view indexmutasi
+    // 	return view('mutasi.indexmutasi',['mutasi' => $mutasi]); //passing value bisa lebih dari 1
+
+        $mutasi = DB::table('mutasi')
+        ->join('pegawai', 'mutasi.idpegawai', '=', 'pegawai.pegawai_id')
+        ->select('mutasi.*', 'pegawai.pegawai_nama')
+        ->paginate(5);
+
+        return view('mutasi.indexmutasi',['mutasi' => $mutasi]);
 
     }
 
@@ -34,7 +41,7 @@ class MutasiController extends Controller
     {
 	// insert data ke table mutasi
 	DB::table('mutasi')->insert([
-		'id' => $request->id,
+		//
 		'idpegawai' => $request->idpegawai,
 		'departemen' => $request->departemen,
 		'subdepartemen' => $request->subdepartemen,
@@ -52,6 +59,16 @@ class MutasiController extends Controller
 	$mutasi = DB::table('mutasi')->where('id',$id)->get();
 	// passing data mutasi yang didapat ke view ubah.blade.php
 	return view('mutasi.ubah',['mutasi' => $mutasi]);
+
+    }
+
+    //view data mutasi
+    public function view($id)
+    {
+	// mengambil data mutasi berdasarkan id yang dipilih
+	$mutasi = DB::table('mutasi')->where('id',$id)->get();
+	// passing data mutasi yang didapat ke view edit.blade.php
+	return view('mutasi.detail',['mutasi' => $mutasi]);
 
     }
 
@@ -78,4 +95,22 @@ class MutasiController extends Controller
 	// alihkan halaman ke halaman pegawai
 	return redirect('/mutasi');
     }
+
+    public function cari(Request $request)
+	{
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$mutasi = DB::table('mutasi')
+        ->join('pegawai', 'mutasi.idpegawai', '=', 'pegawai.pegawai_id')
+		->where('pegawai_nama','like',"%".$cari."%")
+        ->orWhere('departemen','like',"%".$cari."%")
+        ->orWhere('subdepartemen','like',"%".$cari."%")
+		->paginate();
+
+    	// mengirim data mutasi ke view index
+		return view('mutasi.indexmutasi',['mutasi' => $mutasi]);
+
+	}
 }
