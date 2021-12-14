@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Aplikasi Kepegawaian|@yield("title")</title>
 
@@ -103,7 +104,7 @@
 
         .nav {
             height: 100%;
-            display: flex;
+            display: block;
             flex-direction: column;
             justify-content: space-between;
             overflow: hidden;
@@ -172,6 +173,44 @@
 
         }
 
+        .footer {
+            font-family: var(--body-font);
+            position: relative;
+            bottom: 0;
+            left: 0;
+            color: #F67E7D;
+            height: auto;
+            width: 100%;
+        }
+
+        .footer-content {
+            color: #F67E7D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .socials {
+            list-style-type: none;
+            display: flex;
+        }
+
+        .socials a {
+            text-decoration: none;
+            color: #F67E7D;
+        }
+
+        .socials a i {
+            font-size: 1.5rem;
+            transition: color .4s ease;
+
+        }
+
+        .socials a:hover i {
+            opacity: 70%;
+        }
 
         /* ===== MEDIA QUERIES=====*/
         @media screen and (min-width: 768px) {
@@ -228,7 +267,7 @@
             <nav class="nav">
                 <a href="#" class="nav__logo">
                     <i class='bx bxs-face nav__logo-icon'></i>
-                    <span class="nav__logo-name">Kezia Angelique S<br>5026201052</span>
+                    <span class="nav__logo-name">Kezia Angelique S</span>
                 </a>
 
                 <a href="/pegawai" class="nav__link">
@@ -251,13 +290,6 @@
                     <i class='bx bxs-cat'></i>
                     <span class="nav__name">Praktikum</span>
                 </a>
-
-                <div class="footer">
-                <a href="/#" class="nav__link">
-                    <i class='bx bx-copyright nav__icon'></i>
-                    <span class="nav__name small">Kezia Angelique S</span>
-                </a>
-                </div>
             </nav>
         </div>
     </header>
@@ -268,15 +300,27 @@
             @show
         </div>
     </section>
-    <br/>
-    <br/>
-    {{-- <footer style="bottom:0; position: fixed; left: 0; text-align: center; width: 100%; margin-bottom:10px;">
-        <p style="color: #F67E7D">© 2021 Kezia Angelique Sidabutar</p> --}}
+    <br />
+    <br />
+
+
+
+    <div class="footer">
+        <div class="footer-content">
+            <p class="mt-3 small">© 2021 Kezia Angelique Sidabutar <br /> 5026201052</p>
+            <div class="socials d-flex justify-content-evenly mb-2">
+                <a target="_blank" href="https://www.instagram.com/keziaangelique"><i class="fa fa-instagram"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/kezia-angelique-sidabutar-746285212/"><i class="fa fa-linkedin-square mx-2"></i></a>
+                <a target="_blank" href="https://github.com/keziaangelique"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
     <script>
         var menu_btn = document.querySelector("#menu-btn")
         var sidebar = document.querySelector("#sidebar")
         var container = document.querySelector(".my-container")
-        menu_btn.addEventListener("click",()=>{
+        menu_btn.addEventListener("click", () => {
             sidebar.classList.toggle("active-nav")
             container.classList.toggle("active-cont")
         })
