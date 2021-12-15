@@ -50,7 +50,7 @@
     @endforeach
     </table>
 
-    {{-- {{ $nilaikuliah->links() }} --}}
+    {{ $nilaikuliah->links() }}
 
     </div>
 @endsection
