@@ -84,3 +84,8 @@ Route::get('/hewan/edit/{id}','HewanController@edit');
 Route::post('/hewan/save','HewanController@save');
 Route::get('/hewan/delete/{id}','HewanController@delete');
 Route::get('/hewan/cari','HewanController@cari');
+
+//CRUD Nilai Kuliah
+Route::get('/nilaikuliah','NilaiController@index');
+Route::get('/nilaikuliah/tambah','NilaiController@tambah');
+Route::post('/nilaikuliah/store','NilaiController@store');

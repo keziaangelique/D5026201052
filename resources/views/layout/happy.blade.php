@@ -290,6 +290,11 @@
                     <i class='bx bxs-cat'></i>
                     <span class="nav__name">Praktikum</span>
                 </a>
+
+                <a href="/nilaikuliah" class="nav__link">
+                    <i class='bx bx-book-reader'></i>
+                    <span class="nav__name">UAS</span>
+                </a>
             </nav>
         </div>
     </header>
@@ -302,8 +307,6 @@
     </section>
     <br />
     <br />
-
-
 
     <div class="footer">
         <div class="footer-content">
