@@ -89,3 +89,4 @@ Route::get('/hewan/cari','HewanController@cari');
 Route::get('/nilaikuliah','NilaiController@index');
 Route::get('/nilaikuliah/tambah','NilaiController@tambah');
 Route::post('/nilaikuliah/store','NilaiController@store');
+Route::get('/nilaikuliah/hapus/{id}','NilaiController@hapus');
